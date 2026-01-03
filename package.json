@@ -27,7 +27,8 @@
 		"db:studio": "bun run --filter @conqueror/db db:studio",
 		"db:generate": "bun run --filter @conqueror/db db:generate",
 		"db:migrate": "bun run --filter @conqueror/db db:migrate",
-		"db:local": "bun run --filter @conqueror/db db:local"
+		"db:local": "bun run --filter @conqueror/db db:local",
+		"bench": "vitest bench"
 	},
 	"dependencies": {
 		"@conqueror/env": "workspace:*",
@@ -37,12 +38,14 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^2.2.0",
+		"@codspeed/vitest-plugin": "^5.0.1",
 		"@conqueror/config": "workspace:*",
 		"@types/bun": "catalog:",
 		"@types/node": "catalog:",
 		"husky": "^9.1.7",
 		"lint-staged": "^16.1.2",
-		"typescript": "catalog:"
+		"typescript": "catalog:",
+		"vitest": "^2.1.8"
 	},
 	"lint-staged": {
 		"*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}": [
