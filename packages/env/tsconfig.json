@@ -1,3 +1,3 @@
 {
-  "extends": "@conqueror/config/tsconfig.base.json"
+	"extends": "@conqueror/config/tsconfig.base.json"
 }

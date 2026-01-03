@@ -1,11 +1,7 @@
 import { env } from "@conqueror/env/server";
-import { createClient } from "@libsql/client";
-import { drizzle } from "drizzle-orm/libsql";
+import { drizzle } from "drizzle-orm/postgres-js";
 
 import * as schema from "./schema";
 
-const client = createClient({
-  url: env.DATABASE_URL,
-});
-
-export const db = drizzle({ client, schema });
+export const db = drizzle(env.DATABASE_URL, { schema });
+export { eq } from "drizzle-orm";

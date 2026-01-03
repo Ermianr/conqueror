@@ -1,0 +1,95 @@
+version: 2
+
+updates:
+    - package-ecosystem: "bun"
+      directory: "/"
+      schedule:
+          interval: "weekly"
+          day: "monday"
+          time: "09:00"
+          timezone: Etc/UTC
+
+      open-pull-requests-limit: 5
+
+      labels:
+          - "dependencies"
+          - "bun"
+
+      commit-message:
+          prefix: "⬆️ chore(deps)"
+          prefix-development: "⬆️ chore(deps-dev)"
+          include: "scope"
+
+      versioning-strategy: increase-if-necessary
+
+      groups:
+          tanstack:
+              patterns:
+                  - "@tanstack/*"
+              update-types:
+                  - "minor"
+                  - "patch"
+
+          react:
+              patterns:
+                  - "react"
+                  - "react-dom"
+                  - "@types/react"
+                  - "@types/react-dom"
+              update-types:
+                  - "minor"
+                  - "patch"
+
+          dev-dependencies:
+              patterns:
+                  - "@types/*"
+                  - "@biomejs/*"
+                  - "@commitlint/*"
+                  - "commitizen"
+                  - "husky"
+                  - "lint-staged"
+                  - "typescript"
+              update-types:
+                  - "patch"
+              exclude-patterns:
+                  - "@types/react"
+                  - "@types/react-dom"
+
+          database:
+              patterns:
+                  - "drizzle-*"
+                  - "postgres"
+              update-types:
+                  - "minor"
+                  - "patch"
+
+      ignore:
+          - dependency-name: "workspace:*"
+          - dependency-name: "workspace:^"
+          - dependency-name: "workspace:~"
+
+    - package-ecosystem: "github-actions"
+      directory: "/"
+      schedule:
+          interval: "weekly"
+          day: "monday"
+          time: "09:00"
+          timezone: Etc/UTC
+
+      labels:
+          - "dependencies"
+          - "github-actions"
+
+      commit-message:
+          prefix: "⬆️ chore(deps)"
+          include: "scope"
+
+      open-pull-requests-limit: 3
+
+      groups:
+          github-actions:
+              patterns:
+                  - "*"
+              update-types:
+                  - "minor"
+                  - "patch"

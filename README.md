@@ -9,7 +9,7 @@ This project was created with [Better-T-Stack](https://github.com/AmanVarshney01
 - **TailwindCSS** - Utility-first CSS for rapid UI development
 - **shadcn/ui** - Reusable UI components
 - **Drizzle** - TypeScript-first ORM
-- **SQLite/Turso** - Database engine
+- **PostgreSQL** - Database engine (via Docker Compose)
 - **Biome** - Linting and formatting
 - **Husky** - Git hooks for code quality
 - **Starlight** - Documentation site with Astro
@@ -23,16 +23,16 @@ bun install
 ```
 ## Database Setup
 
-This project uses SQLite with Drizzle ORM.
+This project uses PostgreSQL with Drizzle ORM.
 
- 1. Start the local SQLite database (optional):
+ 1. Start the PostgreSQL database using Docker Compose:
 ```bash
-bun run db:local
+docker-compose up -d
 ```
 
-2. Update your `.env` file in the `apps/web` directory with the appropriate connection details if needed.
+ 2. Copy `.env.example` to `.env` in the `apps/web` directory (DATABASE_URL is already configured for the Docker Compose setup).
 
-3. Apply the schema to your database:
+ 3. Apply the schema to your database:
 ```bash
 bun run db:push
 ```
@@ -66,7 +66,10 @@ conqueror/
 - `bun run check-types`: Check TypeScript types across all apps
 - `bun run db:push`: Push schema changes to database
 - `bun run db:studio`: Open database studio UI
-- `bun run db:local`: Start the local SQLite database
+- `bun run db:generate`: Generate database migrations
+- `bun run db:migrate`: Run database migrations
 - `bun run check`: Run Biome formatting and linting
 - `cd apps/docs && bun run dev`: Start documentation site
 - `cd apps/docs && bun run build`: Build documentation site
+- `docker-compose up -d`: Start PostgreSQL database
+- `docker-compose down`: Stop PostgreSQL database
