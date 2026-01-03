@@ -6,7 +6,8 @@
 		"build": "bun --bun vite build",
 		"serve": "bun --bun vite preview",
 		"dev": "bun --bun vite dev",
-		"start": "bun run server.ts"
+		"start": "bun run server.ts",
+		"check-types": "tsc --noEmit"
 	},
 	"dependencies": {
 		"@base-ui/react": "^1.0.0",
