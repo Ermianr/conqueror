@@ -28,6 +28,14 @@
 				"useExhaustiveDependencies": "info",
 				"noChildrenProp": "off"
 			},
+			"complexity": {
+				"noExcessiveCognitiveComplexity": {
+					"level": "error",
+					"options": {
+						"maxAllowedComplexity": 15
+					}
+				}
+			},
 			"nursery": {
 				"useSortedClasses": {
 					"level": "warn",
