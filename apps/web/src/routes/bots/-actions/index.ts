@@ -58,5 +58,5 @@ export const startWorker = createServerFn({ method: "POST" })
 
     worker.postMessage(payload);
 
-    return { succes: true };
+    return { success: true };
   });
