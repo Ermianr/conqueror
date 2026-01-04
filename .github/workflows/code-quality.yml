@@ -49,6 +49,9 @@ jobs:
       - name: Run TypeScript type check
         run: bun run check-types
 
+      - name: Run CSpell spell check
+        run: bun run check-spelling
+
       - name: Build all packages
         run: bun run build
 
@@ -58,4 +61,5 @@ jobs:
           echo "## Code Quality Summary" >> $GITHUB_STEP_SUMMARY
           echo "- ✅ Biome check: Completed" >> $GITHUB_STEP_SUMMARY
           echo "- ✅ TypeScript check: Completed" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ CSpell check: Completed" >> $GITHUB_STEP_SUMMARY
           echo "- ✅ Build: Completed" >> $GITHUB_STEP_SUMMARY
