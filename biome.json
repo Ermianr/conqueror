@@ -11,7 +11,7 @@
 			"**",
 			"!**/.astro",
 			"!**/apps/web/start.ts",
-			"!**/apps/web/src/routeTree.gen.ts",
+			"!**/routeTree.gen.ts",
 			"!**/apps/web/src/components/ui"
 		]
 	},
