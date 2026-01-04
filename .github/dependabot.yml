@@ -2,6 +2,28 @@ version: 2
 
 updates:
     - package-ecosystem: "bun"
+      directory: "/apps/docs"
+      schedule:
+          interval: "weekly"
+          day: "monday"
+          time: "09:00"
+          timezone: Etc/UTC
+
+      labels:
+          - "dependencies"
+          - "bun"
+          - "docs"
+
+      commit-message:
+          prefix: "⬆️ "
+          prefix-development: "⬆️ "
+          include: "scope"
+
+      ignore:
+          - dependency-name: "zod"
+            update-types: ["major"]
+
+    - package-ecosystem: "bun"
       directory: "/"
       schedule:
           interval: "weekly"
@@ -23,6 +45,14 @@ updates:
       versioning-strategy: increase-if-necessary
 
       groups:
+          zod:
+              patterns:
+                  - "zod"
+              update-types:
+                  - "major"
+                  - "minor"
+                  - "patch"
+
           tanstack:
               patterns:
                   - "@tanstack/*"
