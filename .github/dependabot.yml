@@ -2,28 +2,6 @@ version: 2
 
 updates:
     - package-ecosystem: "bun"
-      directory: "/apps/docs"
-      schedule:
-          interval: "weekly"
-          day: "monday"
-          time: "09:00"
-          timezone: Etc/UTC
-
-      labels:
-          - "dependencies"
-          - "bun"
-          - "docs"
-
-      commit-message:
-          prefix: "⬆️ "
-          prefix-development: "⬆️ "
-          include: "scope"
-
-      ignore:
-          - dependency-name: "zod"
-            update-types: [version-update:semver-major]
-
-    - package-ecosystem: "bun"
       directory: "/"
       schedule:
           interval: "weekly"
@@ -95,6 +73,8 @@ updates:
           - dependency-name: "workspace:*"
           - dependency-name: "workspace:^"
           - dependency-name: "workspace:~"
+          - dependency-name: "zod"
+            update-types: [version-update:semver-major]
 
     - package-ecosystem: "github-actions"
       directory: "/"
