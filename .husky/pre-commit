@@ -1,1 +1,1 @@
-lint-staged
+NODE_OPTIONS="--disable-warning=DEP0190" lint-staged
