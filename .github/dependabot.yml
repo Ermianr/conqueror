@@ -44,8 +44,6 @@ updates:
               patterns:
                   - "@types/*"
                   - "@biomejs/*"
-                  - "@commitlint/*"
-                  - "commitizen"
                   - "husky"
                   - "lint-staged"
                   - "typescript"
