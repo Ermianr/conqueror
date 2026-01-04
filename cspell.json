@@ -1,0 +1,29 @@
+{
+	"$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
+	"version": "0.2",
+	"language": "en,es",
+	"useGitignore": true,
+	"dictionaries": [
+		"typescript",
+		"node",
+		"html",
+		"css",
+		"softwareTerms",
+		"companies"
+	],
+	"words": ["tanstack", "biomejs", "uuidv", "radash", "genai"],
+	"ignorePaths": [
+		"node_modules/**",
+		"dist/**",
+		"build/**",
+		".astro/**",
+		".devtools/**",
+		".tanstack/**",
+		"bun.lock",
+		".git/**",
+		".github/**",
+		"**/routeTree.gen.ts",
+		"**/dist/**",
+		"**/migrations/**"
+	]
+}
