@@ -44,7 +44,7 @@ export const startWorker = createServerFn({ method: "POST" })
       const { type, payload } = event.data;
       switch (type) {
         case "READY": {
-          console.log(`Bot ejecutanodse ${payload.userTag}`);
+          console.log(`Bot running ${payload.userTag}`);
         }
       }
     };
